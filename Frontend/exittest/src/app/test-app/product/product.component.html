@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+
+<div class="container">
+
+
+<img src="{{product.imgLink}}">
+<p>Name: {{product.name}}</p>
+<p>Description: {{product.description}}</p>
+<p>Brand: {{product.brand}}</p>
+<p>Price: {{product.price}}</p>
+</div>
+
+<div class="formContainer">
+<form #serviceForm="ngForm" (ngSubmit)="serviceability(serviceForm.value)">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>check serviceability</mat-label>
+        <input matInput type="text" required name="pincode" ngModel>
+    </mat-form-field>
+    <div class="example-button-row">
+        <button mat-raised-button type="submit" color="primary">Check</button>
+    </div>
+</form>
+</div>

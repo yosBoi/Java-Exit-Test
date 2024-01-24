@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div class="container">
+    <form class="example-form" #registerForm="ngForm" (ngSubmit)="registerUser()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" [(ngModel)]="user.fullName" required name="fullName" #fullName="ngModel">
+        </mat-form-field>
+        
+        <!-- <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" [(ngModel)]="user.lastName" required name="lastName" #lastName="ngModel">
+          </mat-form-field> -->
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="user.email" required name="email" #email="ngModel" email="true">
+          </mat-form-field>
+          
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [(ngModel)]="user.password" required name="password"
+            #password="ngModel"
+            [class.is-invalid]="password.invalid && password.touched">
+            <small [class.d-none]="password.valid || password.untouched">Password is required!</small>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" ngModel required name="cpassword"
+            #cpassword="ngModel"
+            [class.is-invalid]="cpassword.invalid && cpassword.touched">
+            <small [class.d-none]="(cpassword.value==password.value) || cpassword.untouched">Password must be same!</small>
+          </mat-form-field>
+
+        <div class="example-button-row">
+            <button mat-raised-button type="submit" color="primary" [disabled]="!registerForm.valid">Sign Up</button>
+        </div>
+
+        <div class="newUser">
+            <a routerLink = "/login">Have an account already?</a>
+        </div>
+    
+      </form>
+    </div>
+    
+

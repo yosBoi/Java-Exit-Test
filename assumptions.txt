@@ -1,0 +1,28 @@
+Assumption 1:
+
+The data of the products will be already present in the database and hence no method to add products is given on the frontend (also wasnt asked in the requirements)
+
+Each product will have the following data fields:
+
+product_id - Long, unique (primary key)
+brand - String
+description - String
+img_link - String (a link to the image of product)
+name - String
+pincode - int
+price - int
+product_code - String
+
+Assumption 2:
+
+Since the method of implementation of the deliverability/serviceability API wasnt defined, it has been implemented in the following way
+
+A seperate table (product_deliverable_pincodes) keeps track of pincodes each product can be delivered to (by mapping product_id and delivery_pincode)
+If a product is deliverable, it is assumed that the delivery time will be equal to the difference in the product's current location pincode and the delivery location pincode + 1 day
+
+
+
+- The spring-boot application attempts to connect to mysql server on default port (3306) on a database named "exittest" which needs to be present
+- The tables required to store data are created automatically by it
+- The product data needs to be populated manually
+- The angular project might be unsupported in newer versions of nodeJS due to openssl support changes, the command "$env:NODE_OPTIONS = "--openssl-legacy-provider" needs to be run in powershell to run angular project in newer nodejs.

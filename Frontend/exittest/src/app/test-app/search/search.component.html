@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div class="container">
+    <form class="example-form" #searchForm="ngForm" (ngSubmit)="searchProducts(searchForm.value)">
+        <mat-label>Query</mat-label>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input matInput type="text" required name="query" ngModel>
+        </mat-form-field>
+
+        <div class="example-button-row">
+            <button mat-raised-button type="submit" color="primary">Search</button>
+        </div>
+    </form>
+</div>

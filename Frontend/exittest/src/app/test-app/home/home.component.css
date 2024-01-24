@@ -1,0 +1,11 @@
+.container{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+
+  a{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black
+  }

@@ -1,0 +1,17 @@
+<div class="header">
+    <mat-grid-list cols="5" rowHeight="40px">
+        <mat-grid-tile [colspan]=1 [rowspan]=1>
+            
+          <button mat-icon-button color="primary" routerLink="/home">
+            <mat-icon>home</mat-icon>Home
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=4 [rowspan]=1>
+            <div class="top-right" *ngIf="loggedIn()" style="cursor: pointer;">
+                <a (click)="logout()"><span class="material-icons">
+                        logout
+                </span>Logout</a>
+                </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="container">
+    <!-- <form #brandFilterForm="ngForm" (ngSubmit)="brandFilter(brandFilterForm.value)">
+
+    </form> -->
+    <form class="example-form" #filterForm="ngForm" (ngSubmit)="filter(filterForm.value)">
+
+        <div *ngFor="let b of brands" class="brands-checkboxes">
+            
+            <mat-label>
+            <input type="checkbox" name="filterBrands" value = "{{b}}" ngModel (change)="onCheckChange($event)">{{b}}
+            </mat-label>
+            
+
+        </div>
+
+        <mat-label>min price</mat-label>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input matInput type="text" name="minPrice" ngModel>
+        </mat-form-field>
+        <mat-label>max price</mat-label>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input matInput type="text" name="maxPrice" ngModel>
+        </mat-form-field>
+
+        <div class="example-button-row">
+            <button mat-raised-button type="submit" color="primary">Filter</button>
+        </div>
+    </form>
+    <table class = "searchTable">
+        <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Product Brand</th>
+            <th>Product Price</th>
+            <th>Link</th>
+        </tr>
+        <tr *ngFor="let p of filteredProducts">
+            <td><img style="display:block;" src="{{p.imgLink}}"></td>
+            <td>{{p.name}}</td>
+            <td>{{p.brand}}</td>
+            <td>{{p.price}}</td>
+            <td><a href="/product?id={{p.productId}}">View Details</a></td>
+        </tr>
+    </table>
+</div>

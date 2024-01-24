@@ -1,0 +1,21 @@
+img{
+    max-width: 200px;
+}
+
+.container{
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    border: 2px solid black;
+    width: fit-content;
+  }
+
+  .formContainer{
+    text-align: center;
+  }
+
+  form{
+    display: inline-block;
+  }
